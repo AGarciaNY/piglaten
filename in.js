@@ -1,42 +1,26 @@
 /*global $*/
 $("#two").click(function(){
-
+	$("#five").html("<h4 id=","'five'","></h4>");
+	
 	var english= $("#one").val() ;
-	
 	var piglat= english.split(" ");
-	
-	$("#four").html(piglat);
+	console.log(english);
+	console.log(piglat);
 	
 	for( var i=0; i < piglat.length ; i++){
-		var first = piglat.charAt(0);
+		var first = piglat[i].charAt(0);
+		var wordtwo = piglat[i].slice(1);
 	
-		var wordtwo = piglat.slice(1);
-	
-			if(first==="a"){
-			$("#five").html(piglat[i]+"ay");
-		} 
-		else if(first==="e"){
-			$("#five").html(piglat[i]+"ay");
+			if(first==="a" ||first==="e"||first==="i"||first==="o"||first==="u"){
+			$("#five").append(piglat[i]+"yay ");
 		}
-		else if(first==="i"){
-			$("#five").html(piglat[i]+"ay");
-		} 
-			else if(first==="o"){
-			$("#five").html(piglat[i]+"ay");
-		} 
-		else if(first=== "u"){
-			$("#five").html(piglat[i]+"ay");
-			}
 		else if(first!== "a"){
-			$("#five").html(wordtwo+first+"ay");
+			$("#five").append(wordtwo+first+"ay ");
 		}	
 		
-		$("#three").append( piglat[i] +"ay ");
-		console.log(piglat[i]);
+
 	
 	}
-	$("#te").html(first);
-	$(".te").html(wordtwo);
 });
 
 
